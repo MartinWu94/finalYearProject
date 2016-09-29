@@ -1,4 +1,6 @@
 # finalYearProject
+
+![alt tag](UoL.png)
 UOL
 
 Repository backing up final year project work.
