@@ -1,4 +1,4 @@
-# finalYearProject
+# Final Year Project
 
 ![alt tag](UoL.png)
 ### UoL
