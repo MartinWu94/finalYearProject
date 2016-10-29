@@ -1,0 +1,7 @@
+package repository;
+
+public interface AdminRepo extends CrudRepository<User, Integer> {
+User findByTempRole(String tempRole);
+User findByRole(Role role);
+User findById(Integer id);
+}

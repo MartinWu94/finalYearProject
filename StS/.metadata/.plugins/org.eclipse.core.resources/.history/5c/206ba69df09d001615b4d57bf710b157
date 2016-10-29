@@ -1,0 +1,231 @@
+package domain;
+
+import java.util.Set;
+
+
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Integer id;
+    private String registerDate;
+    private String lastlogin;
+    private String firstname;
+    private String surname;
+    private String username;
+    private String email;
+    private String dob;
+    private String password;
+    private String tempRole;
+    private String mobile;
+    private String phone;
+    private String login;
+    private String postCode;
+    private String county;
+    private boolean buddyup;
+   
+    private int houseNumber;
+    private boolean acountActivated;
+    private String streetName;
+    private String secondname;
+    private String profilePictureName;
+    private String gender;
+    private boolean isonline;
+    private boolean active;
+    @Lob
+    private String identification;
+    @Lob
+    private String aboutme;
+    private int posts;
+    private int buddies;
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinTable(name="user_roles",
+        joinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")},
+        inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="id")}
+    )
+    private Role role;
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="userbuddyup",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="u_id"))
+    private Set<User> buddyUp;
+    public final boolean isActive() {
+        return active;
+    }
+    public final void setActive(final boolean active) {
+        this.active = active;
+    }
+    public final String getLogin() {
+        return login;
+    }
+    public final void setLogin(final String login) {
+        this.login = login;
+    }
+    public final boolean isAcountActivated() {
+        return acountActivated;
+    }
+    public final void setAcountActivated(final boolean acountActivated) {
+        this.acountActivated = acountActivated;
+    }
+    public final String getTempRole() {
+        return tempRole;
+    }
+    public final String getPostCode() {
+        return postCode;
+    }
+    public final void setPostCode(final String postCode) {
+        this.postCode = postCode;
+    }
+    public final int getHouseNumber() {
+        return houseNumber;
+    }
+    public final void setHouseNumber(final int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+    public final String getStreetName() {
+        return streetName;
+    }
+    public final void setStreetName(final String streetName) {
+        this.streetName = streetName;
+    }
+    public final String getSecondname() {
+        return secondname;
+    }
+    public final void setSecondname(final String secondname) {
+        this.secondname = secondname;
+    }
+    public final String getGender() {
+        return gender;
+    }
+    public final void setGender(final String gender) {
+        this.gender = gender;
+    }
+    public final void setTempRole(final String tempRole) {
+        this.tempRole = tempRole;
+    }
+    public final String getUsername() {
+        return username;
+    }
+    public final void setUsername(final String username) {
+        this.username = username;
+    }
+    public final Role getRole() {
+        return role;
+    }
+    public final void setRole(final Role role) {
+        this.role = role;
+    }
+    public final String getEmail() {
+        return email;
+    }
+    public final void setEmail(final String email) {
+        this.email = email;
+    }
+    public final String getPassword() {
+        return password;
+    }
+    public final void setPassword(final String password) {
+        this.password = password;
+    }
+    public final Integer getId() {
+        return id;
+    }
+    public final void setId(final Integer id) {
+        this.id = id;
+    }
+    public final String getFirstname() {
+        return firstname;
+    }
+    public final void setFirstname(final String firstname) {
+        this.firstname = firstname;
+    }
+    public final String getSurname() {
+        return surname;
+    }
+    public final void setSurname(final String surname) {
+        this.surname = surname;
+    }
+    public final String getRegisterDate() {
+        return registerDate;
+    }
+    public final void setRegisterDate(final String registerDate) {
+        this.registerDate = registerDate;
+    }
+    public final String getLastlogin() {
+        return lastlogin;
+    }
+    public final void setLastlogin(final String lastlogin) {
+        this.lastlogin = lastlogin;
+    }
+    public String getProfilePictureName() {
+        return profilePictureName;
+    }
+    public void setProfilePictureName(String profilePictureName) {
+        this.profilePictureName = profilePictureName;
+    }
+    public int getPosts() {
+        return posts;
+    }
+    public void setPosts(int posts) {
+        this.posts = posts;
+    }
+    public int getBuddies() {
+        return buddies;
+    }
+    public void setBuddies(int buddies) {
+        this.buddies = buddies;
+    }
+    public String getMobile() {
+        return mobile;
+    }
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    public String getIdentification() {
+        return identification;
+    }
+    public void setIdentification(String identification) {
+        this.identification = identification;
+    }
+    public String getDob() {
+        return dob;
+    }
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+    public String getCounty() {
+        return county;
+    }
+    public void setCounty(String county) {
+        this.county = county;
+    }
+    public boolean isBuddyup() {
+        return buddyup;
+    }
+    public void setBuddyup(boolean buddyup) {
+        this.buddyup = buddyup;
+    }
+    public String getAboutme() {
+        return aboutme;
+    }
+    public void setAboutme(String aboutme) {
+        this.aboutme = aboutme;
+    }
+    public boolean isIsonline() {
+        return isonline;
+    }
+    public void setIsonline(boolean isonline) {
+        this.isonline = isonline;
+    }
+    public Set<User> getBuddyUp() {
+        return buddyUp;
+    }
+    public void setBuddyUp(Set<User> buddyUp) {
+        this.buddyUp = buddyUp;
+    }
+    
+}
